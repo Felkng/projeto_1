@@ -13,4 +13,42 @@ import java.math.BigDecimal;
 public class Produto {
     private String nome; //max ch 150
     private BigDecimal preco;
+
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+    
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) throws Exception {
+        if(nome.length() > 150)
+            throw new Exception("Name must not have more than 150 caracters");
+         else
+            this.nome = nome;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
+    }
+
+    //</editor-fold>
+
+    public Produto(String nome, BigDecimal preco) throws Exception {
+        setNome(nome);
+        this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" + "nome=" + nome + ", preco=" + preco.toString() + '}';
+    }
+   
+    
+   
+    
 }
