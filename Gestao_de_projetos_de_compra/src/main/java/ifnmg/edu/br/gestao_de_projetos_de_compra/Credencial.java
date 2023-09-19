@@ -65,7 +65,7 @@ public class Credencial {
 
     @Override
     public String toString() {
-        return "Credencial{" + "email=" + email + ", senha=" + senha + ", isAdminstrator=" + isAdminstrator + ", person=" + person.getName() + '}';
+        return "Credencial{" + "email=" + email + ", senha=" + senha + ", Administrador: " + (isAdminstrator?"Administrador":"Usuário geral") +  '}';
     }
     
     

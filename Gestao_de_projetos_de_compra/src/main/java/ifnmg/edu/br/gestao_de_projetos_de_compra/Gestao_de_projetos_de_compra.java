@@ -61,7 +61,7 @@ public class Gestao_de_projetos_de_compra {
         try{
             comprasP1.addIten(new Item());
             comprasP1.getItens().get(0).setQuantidade(11);
-            comprasP1.getItens().get(0).addProduct((new Produto("Abacaxi", BigDecimal.valueOf(1.99))));
+            comprasP1.getItens().get(0).setProducts((new Produto("Abacaxi", BigDecimal.valueOf(1.99))));
             comprasP1.setNotaFiscal((long)000100101);
             comprasP1.setPerson(p1);
             p1.addCompra(comprasP1);
@@ -69,10 +69,10 @@ public class Gestao_de_projetos_de_compra {
                 comprasP2.get(0).addIten(new Item());
                 comprasP2.get(0).getItens().get(i-1).setQuantidade(10+i);
             }
-            comprasP2.get(0).getItens().get(0).addProduct((new Produto("Banana", BigDecimal.valueOf(2.99))));
-            comprasP2.get(0).getItens().get(1).addProduct((new Produto("Caqui", BigDecimal.valueOf(3.99))));
-            comprasP2.get(0).getItens().get(2).addProduct((new Produto("Damasco", BigDecimal.valueOf(4.99))));
-            comprasP2.get(0).getItens().get(3).addProduct((new Produto("Espinafre", BigDecimal.valueOf(5.99))));
+            comprasP2.get(0).getItens().get(0).setProducts((new Produto("Banana", BigDecimal.valueOf(2.99))));
+            comprasP2.get(0).getItens().get(1).setProducts((new Produto("Caqui", BigDecimal.valueOf(3.99))));
+            comprasP2.get(0).getItens().get(2).setProducts((new Produto("Damasco", BigDecimal.valueOf(4.99))));
+            comprasP2.get(0).getItens().get(3).setProducts((new Produto("Espinafre", BigDecimal.valueOf(5.99))));
             comprasP2.get(0).setNotaFiscal((long)000200202);
             comprasP2.get(0).setPerson(p2);
             
@@ -83,9 +83,9 @@ public class Gestao_de_projetos_de_compra {
             comprasP2.get(1).getItens().get(1).setQuantidade(22);
             comprasP2.get(1).getItens().get(2).setQuantidade(23);
             
-            comprasP2.get(1).getItens().get(0).addProduct((new Produto("Abacaxi", BigDecimal.valueOf(1.99))));
-            comprasP2.get(1).getItens().get(1).addProduct((new Produto("Caqui", BigDecimal.valueOf(3.99))));
-            comprasP2.get(1).getItens().get(2).addProduct((new Produto("Espinafre", BigDecimal.valueOf(5.99))));
+            comprasP2.get(1).getItens().get(0).setProducts((new Produto("Abacaxi", BigDecimal.valueOf(1.99))));
+            comprasP2.get(1).getItens().get(1).setProducts((new Produto("Caqui", BigDecimal.valueOf(3.99))));
+            comprasP2.get(1).getItens().get(2).setProducts((new Produto("Espinafre", BigDecimal.valueOf(5.99))));
             comprasP2.get(1).setNotaFiscal((long)000200212 );
             comprasP2.get(1).setPerson(p2);
             p2.setCompras(comprasP2);
@@ -96,9 +96,9 @@ public class Gestao_de_projetos_de_compra {
             comprasP3.getItens().get(1).setQuantidade(32);
             comprasP3.getItens().get(2).setQuantidade(33);
             
-            comprasP3.getItens().get(0).addProduct(new Produto("Abacaxi", BigDecimal.valueOf(1.99)));
-            comprasP3.getItens().get(1).addProduct(new Produto("Caqui", BigDecimal.valueOf(3.99)));
-            comprasP3.getItens().get(2).addProduct(new Produto("Espinafre", BigDecimal.valueOf(5.99)));
+            comprasP3.getItens().get(0).setProducts(new Produto("Abacaxi", BigDecimal.valueOf(1.99)));
+            comprasP3.getItens().get(1).setProducts(new Produto("Caqui", BigDecimal.valueOf(3.99)));
+            comprasP3.getItens().get(2).setProducts(new Produto("Espinafre", BigDecimal.valueOf(5.99)));
             comprasP3.setNotaFiscal((long)000300303);
             comprasP3.setPerson(p3);
             p3.addCompra(comprasP3);
@@ -109,12 +109,8 @@ public class Gestao_de_projetos_de_compra {
         }
 
         System.out.println(p1.toString());
-        System.out.println("Valor total da compra:" + p1.getCompras().get(0).calcularTotal().toString() + "\n");
         System.out.println(p2.toString());
-        System.out.println("Valor total da compra 1: " + p2.getCompras().get(0).calcularTotal().toString() + "\n");
-        System.out.println("Valor total da compra 2: " + p2.getCompras().get(1).calcularTotal().toString() + "\n");
         System.out.println(p3.toString());
-        System.out.println("Valor total da compra:" + p3.getCompras().get(0).calcularTotal().toString() + "\n");
       
       
     }

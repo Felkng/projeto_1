@@ -74,10 +74,13 @@ public class Endereco {
 
     public Endereco() {
     }
+    
+    //“RUA Dois, 300,
+//Village do Lago I, 39.404-058”;
 
     @Override
     public String toString() {
-        return "Endereco{" + "tipoLogradouro=" + tipoLogradouro.toString() + ", logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep + '}';
+        return "Endereco{" + tipoLogradouro.toString() + "  " + logradouro + ", " + numero + ", " + bairro + ", " + cep.toString() +  '}';
     }
     
     

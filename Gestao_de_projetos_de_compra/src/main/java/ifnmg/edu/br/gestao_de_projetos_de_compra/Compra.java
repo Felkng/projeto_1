@@ -71,11 +71,13 @@ public class Compra {
     
     @Override
     public String toString() {
-        String items = "\n";
+        String items = "[ ";
+        int ct=1;
         for(Item x: this.itens){
-            items += x.toString() + "\n";
+            items += "Item " +(ct++) + ": " +  x.toString() + "; ";
         }
-        return "Compra{" + "notaFiscal=" + notaFiscal + ", person=" + person.getName() + ", \nitens=" + items + '}';
+        items +=" ]";
+        return "Compra{ " + "Nota fiscal: " + this.notaFiscal + "; " + "Cliente: " + this.person.getName() + "; R$" + this.calcularTotal().toString() + items  + '}';
     }
     
     

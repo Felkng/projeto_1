@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Item {
     private Integer quantidade;
-    private ArrayList<Produto> products;
+    private Produto products;
 
     public Integer getQuantidade() {
         return quantidade;
@@ -23,45 +23,33 @@ public class Item {
         this.quantidade = quantidade;
     }
 
-    public ArrayList<Produto> getProducts() {
+    public Produto getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Produto> products) {
+    public void setProducts(Produto products) {
         this.products = products;
     }
 
-    
-    public void addProduct(Produto product) {
-        this.products.add(product);
-    }
-
-    public Item() {
-        this.products = new ArrayList<>();
-    }
-
-    public Item(Integer quantidade, ArrayList<Produto> products) {
+    public Item(Integer quantidade, Produto products) {
         this.quantidade = quantidade;
         this.products = products;
     }
+
+    public Item() {
+    }
+
     
     public BigDecimal calcularTotal(){
         BigDecimal total = new BigDecimal(0.0);
-//        for(Produto produto: this.products){
-//            total = total.add(produto.getPreco());
-//        }
-        total = this.products.get(0).getPreco();
+        total = this.products.getPreco();
         total = total.multiply(BigDecimal.valueOf(this.quantidade));
         return total;
     }
 
     @Override
     public String toString() {
-        String produtos = "[";
-            for(Produto x: this.products){
-                produtos += " [ "+  x.toString() + " ] ";
-            }
-        return "Item{" + "quantidade=" + quantidade + ", \nproducts=" + produtos + ']' + '}';
+        return "Item{ " + this.products.getNome() + " " + this.quantidade + " x R$" + this.products.getPreco() + " = "  + this.calcularTotal().toString() + " }";
     }
     
     

@@ -27,7 +27,6 @@ public class Produto {
          else
             this.nome = nome;
     }
-
     public BigDecimal getPreco() {
         return preco;
     }
@@ -45,7 +44,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" + "nome=" + nome + ", preco=" + preco.toString() + '}';
+        return "Produto{"+ nome + " R$" + preco.toString() + '}';
     }
    
     

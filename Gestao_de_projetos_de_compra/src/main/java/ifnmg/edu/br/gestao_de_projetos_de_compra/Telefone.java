@@ -35,7 +35,7 @@ public class Telefone {
 
     @Override
     public String toString() {
-        return "Telefone{" + "ddd=" + ddd.intValue() + ", number=" + number + '}';
+        return "Telefone{" + "(" + ddd.intValue() + ")" + " " + number.toString() +  '}';
     }
     
     

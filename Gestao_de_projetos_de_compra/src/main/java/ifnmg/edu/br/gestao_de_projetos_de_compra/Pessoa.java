@@ -4,6 +4,7 @@
  */
 package ifnmg.edu.br.gestao_de_projetos_de_compra;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -116,23 +117,24 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        String nome ="Nome: " +  this.name + "\n";
-        String credenciais ="Credenciais: " + this.credencial.toString() + "\n";
-        String dataDeNascimento = "Data de nascimento: " + this.dateBorn.toString() + "\n";
-        String idade = "Idade: " + this.age.intValue() + "\n";
-        String enderecos = "Enderecos: \n";
+        String enderecos = "Endereços: [ ";
         for(Endereco x: this.enderecos){
-            enderecos += " [ " +  x.toString() + " ] " + "\n";
+            enderecos +=   x.toString() + "; ";
         }
-        String telefones = "Telefones: \n";
+        enderecos += " ] ";
+        String telefones = "Telefones: [ ";
         for(Telefone x: this.telefones){
-            telefones +=  " [ " +  x.toString() + "]" + "\n";
+            telefones +=   x.toString() + "; ";
         }
-        String compras = "Compras: \n";
+        telefones += " ] ";
+        BigDecimal valorTotal = new BigDecimal(0.0);
+        String compras = "Compras: [";
          for(Compra x: this.compras){
-            compras +=  " [ " +  x.toString() + "]" + "\n";
+            compras +=  x.getNotaFiscal() + ", " + x.calcularTotal().toString() + "; ";
+            valorTotal = valorTotal.add(x.calcularTotal());
         }
-        return nome + credenciais + dataDeNascimento+ idade + enderecos + telefones + compras;
+        compras += " ] ";
+        return (this.name + ", " + this.dateBorn + ", " + this.age.intValue() + " anos, " + this.credencial + ", " + enderecos + ", " + telefones + ", Gasto total:  " + valorTotal.toString() + ", " + compras);
     }
     
 
